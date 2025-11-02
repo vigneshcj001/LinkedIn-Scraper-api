@@ -128,3 +128,10 @@ def get_company(request: Request, identifier: str):
     """Fetch company details by LinkedIn identifier."""
     rapidapi_key = request.headers.get("x-rapidapi-key")
     return fetch_from_rapidapi("companies/detail", {"identifier": identifier}, rapidapi_key)
+
+
+
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "LinkedIn Scraper API is running 🚀"}
+
